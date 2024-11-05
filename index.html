@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <dialog id="pop-up-menu">
+      <h1>Tic Tac Toe</h1>
+      <button id="closeModal" class="close-modal">
+        <svg
+          width="33"
+          height="33"
+          viewBox="0 0 33 33"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M28.8162 4.61701L27.8657 3.66647C25.9355 1.73629 22.8061 1.73629 20.8759 3.66646L16.9078 7.63456C16.5397 8.00264 15.943 8.00264 15.5749 7.63456L11.6068 3.66646C9.67661 1.73628 6.54718 1.73629 4.61701 3.66646L3.66647 4.617C1.73629 6.54718 1.73629 9.67661 3.66646 11.6068L7.63456 15.5749C8.00264 15.943 8.00264 16.5397 7.63456 16.9078L3.66646 20.8759C1.73629 22.8061 1.73629 25.9355 3.66646 27.8657L4.61701 28.8162C6.54718 30.7464 9.67661 30.7464 11.6068 28.8162L15.5749 24.8481C15.943 24.4801 16.5397 24.4801 16.9078 24.8481L20.8759 28.8162C22.8061 30.7464 25.9355 30.7464 27.8657 28.8162L28.8162 27.8657C30.7464 25.9355 30.7464 22.8061 28.8162 20.8759L24.8481 16.9078C24.4801 16.5397 24.4801 15.943 24.8481 15.5749L28.8162 11.6068C30.7464 9.67661 30.7464 6.54718 28.8162 4.61701Z"
+            fill="#FF6262"
+            stroke="#2836A0"
+            stroke-width="4"
+          />
+        </svg>
+      </button>
+      <section id="inner-menu">
+        <div class="game-mode">
+          <h2>Mode:</h2>
+          <button class="pvp body-text" data-value="pvp" disabled>
+            PvP (unavailable)
+          </button>
+          <button class="pvc body-text" data-value="pvc">
+            Player vs Computer
+          </button>
+        </div>
+        <div class="game-symbol">
+          <h2>Pick your starting symbol:</h2>
+          <button class="symbol-X" data-value="1">
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_1430_387)">
+                <path
+                  d="M42.969 48.0194C45.1225 50.1729 48.6139 50.1729 50.7674 48.0194C52.9208 45.866 52.9208 42.3745 50.7674 40.2211L13.5267 2.98045C11.3733 0.826996 7.88182 0.826992 5.72837 2.98044C3.57492 5.13389 3.57492 8.62533 5.72837 10.7788L42.969 48.0194Z"
+                  fill="white"
+                />
+                <path
+                  d="M13.5277 48.0194C11.3743 50.1729 7.88285 50.1729 5.7294 48.0194C3.57594 45.866 3.57594 42.3745 5.7294 40.2211L42.97 2.98045C45.1235 0.826996 48.6149 0.826992 50.7684 2.98044C52.9218 5.13389 52.9218 8.62533 50.7684 10.7788L13.5277 48.0194Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_1430_387"
+                  x="0.608664"
+                  y="0.489202"
+                  width="55.2788"
+                  height="55.2784"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="2.62846" />
+                  <feGaussianBlur stdDeviation="1.75231" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.268281 0 0 0 0 0.116716 0 0 0 0 0.116716 0 0 0 0.4 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_1430_387"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_1430_387"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </button>
+          <button class="symbol-O" data-value="2">
+            <svg
+              width="61"
+              height="61"
+              viewBox="0 0 61 61"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_1237_1769)">
+                <circle
+                  cx="30.2497"
+                  cy="27.9999"
+                  r="21.318"
+                  stroke="white"
+                  stroke-width="10"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_1237_1769"
+                  x="0.427023"
+                  y="0.80573"
+                  width="59.646"
+                  height="59.6453"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  />
+                  <feOffset dy="2.62846" />
+                  <feGaussianBlur stdDeviation="1.75231" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0.482764 0 0 0 0 0.0467756 0 0 0 0 0.0467756 0 0 0 0.4 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_1237_1769"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_1237_1769"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+          </button>
+        </div>
+        <div class="player-details">
+          <h2>Player Name:</h2>
+          <div class="avatar-container">
+            <img src="images/default_avatar.png" alt="" />
+          </div>
+          <input
+            type="text"
+            id="player-details"
+            placeholder="Your Name"
+            maxlength="5"
+          />
+        </div>
+        <div class="computer-difficulty">
+          <h2>Computer Difficulty:</h2>
+          <button
+            class="bot-container chloe-bot"
+            data-value="20"
+            data-name="Chloe"
+          >
+            <img src="images/chloe_avatar.png" alt="" />
+            <div class="bot-details">
+              <div class="bot-name">Chloe</div>
+              <div class="bot-diff">Easy</div>
+            </div>
+          </button>
+          <button class="bot-container sam-bot" data-value="35" data-name="Sam">
+            <img src="images/sam_avatar.png" alt="" />
+            <div class="bot-details">
+              <div class="bot-name">Sam</div>
+              <div class="bot-diff">Medium</div>
+            </div>
+          </button>
+          <button
+            class="bot-container sophia-bot"
+            data-value="55"
+            data-name="Sophia"
+          >
+            <img src="images/sophia_avatar.png" alt="" />
+            <div class="bot-details">
+              <div class="bot-name">Sophia</div>
+              <div class="bot-diff">Hard</div>
+            </div>
+          </button>
+          <button
+            class="bot-container marcus-bot"
+            data-value="100"
+            data-name="Marcus"
+          >
+            <img src="images/marcus_avatar.png" alt="" />
+            <div class="bot-details">
+              <div class="bot-name">Marcus</div>
+              <div class="bot-diff">Extreme</div>
+            </div>
+          </button>
+        </div>
+        <button class="start-button" disabled>Start</button>
+      </section>
+    </dialog>
+    <div class="game-container invisible">
+      <div class="text-container">
+        <div class="round-counter"></div>
+        <div class="text-announcement">Tic Tac Toe</div>
+      </div>
+      <div class="game-interface">
+        <div class="player-container player-one p1 hidden">
+          <div class="p1 symbol">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.4681 14.578C13.1145 15.2244 14.1625 15.2244 14.8089 14.578C15.4553 13.9316 15.4553 12.8835 14.8089 12.2371L3.63033 1.05853C2.98393 0.412129 1.9359 0.412129 1.28949 1.05853C0.643086 1.70494 0.643086 2.75297 1.28949 3.39938L12.4681 14.578Z"
+                fill="white"
+              />
+              <path
+                d="M3.63042 14.578C2.98402 15.2244 1.93599 15.2244 1.28958 14.578C0.643177 13.9316 0.643177 12.8835 1.28958 12.2371L12.4682 1.05853C13.1146 0.412129 14.1626 0.412129 14.809 1.05853C15.4554 1.70494 15.4554 2.75297 14.809 3.39938L3.63042 14.578Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <img
+            src="images/chloe_avatar.png"
+            alt="Description"
+            class="p1 avatar"
+          />
+          <div class="p1 name">Chloe</div>
+          <div class="p1 type">Player</div>
+          <div class="p1 score"></div>
+        </div>
+        <div class="game-wrapper">
+          <div class="container">
+            <button
+              class="grid-item-1 grid-child"
+              disabled
+              data-box="1"
+            ></button>
+            <button
+              class="grid-item-2 grid-child"
+              disabled
+              data-box="2"
+            ></button>
+            <button
+              class="grid-item-3 grid-child"
+              disabled
+              data-box="3"
+            ></button>
+            <button
+              class="grid-item-4 grid-child"
+              disabled
+              data-box="4"
+            ></button>
+            <button
+              class="grid-item-5 grid-child"
+              disabled
+              data-box="5"
+            ></button>
+            <button
+              class="grid-item-6 grid-child"
+              disabled
+              data-box="6"
+            ></button>
+            <button
+              class="grid-item-7 grid-child"
+              disabled
+              data-box="7"
+            ></button>
+            <button
+              class="grid-item-8 grid-child"
+              disabled
+              data-box="8"
+            ></button>
+            <button
+              class="grid-item-9 grid-child"
+              disabled
+              data-box="9"
+            ></button>
+          </div>
+          <div class="svg-container">
+            <svg
+              width="380"
+              height="380"
+              viewBox="0 0 380 380"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask id="path-1-inside-1_1237_2060" fill="white">
+                <rect width="382.518" height="382.518" rx="9" />
+              </mask>
+              <rect
+                width="382.518"
+                height="382.518"
+                rx="9"
+                stroke="#4E4778"
+                stroke-width="20"
+                mask="url(#path-1-inside-1_1237_2060)"
+              />
+              <rect
+                x="122.902"
+                y="0.0513611"
+                width="9.04457"
+                height="348.506"
+                rx="4.52229"
+                fill="#4E4778"
+              />
+              <rect
+                x="250.574"
+                y="158.251"
+                width="9.04457"
+                height="224.216"
+                rx="4.52229"
+                fill="#4E4778"
+              />
+              <rect
+                width="9.04457"
+                height="121.094"
+                rx="4.52229"
+                transform="matrix(1 0 0 -1 250.574 126.733)"
+                fill="#4E4778"
+              />
+              <rect
+                x="0.0507812"
+                y="259.617"
+                width="9.04457"
+                height="382.415"
+                rx="4.52229"
+                transform="rotate(-90 0.0507812 259.617)"
+                fill="#4E4778"
+              />
+              <rect
+                x="0.0507812"
+                y="131.945"
+                width="9.04457"
+                height="61.5996"
+                rx="4.52229"
+                transform="rotate(-90 0.0507812 131.945)"
+                fill="#4E4778"
+              />
+              <rect
+                width="9.04457"
+                height="281.596"
+                rx="4.52229"
+                transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 357.984 131.945)"
+                fill="#4E4778"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="player-container player-two p2 hidden">
+          <div class="p2 symbol">
+            <svg
+              width="22"
+              height="23"
+              viewBox="0 0 22 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="10.9258"
+                cy="11.6693"
+                r="8.1517"
+                stroke="#FF7629"
+                stroke-width="5.09895"
+              />
+            </svg>
+          </div>
+          <img
+            src="images/chloe_avatar.png"
+            alt="Description"
+            class="p2 avatar"
+          />
+          <div class="p2 name">Chloe</div>
+          <div class="p2 type">Player</div>
+          <div class="p2 score"></div>
+        </div>
+      </div>
+      <div class="game-buttons">
+        <button id="openModal">New Game</button>
+      </div>
+    </div>
+
+    <div class="personal-logo">
+      <a href="https://github.com/aroan-v/Tic-Tac-Toe" target="_blank">
+        <svg width="100" height="41" xmlns="http://www.w3.org/2000/svg">
+          <image href="images/logo.svg" />
+        </svg>
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

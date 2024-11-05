@@ -1,0 +1,652 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* End of CSS Reset */
+
+/* ================== */
+/* Font Face          */
+/* ================== */
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Inter-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/Inter-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: normal;
+  font-style: italic;
+  src: url("fonts/Inter-Italic.ttf") format("truetype");
+}
+
+/* End of Font Faces */
+
+body {
+  background-color: #120b3c;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers the container vertically */
+  height: 100vh; /* Makes the body take the full viewport height */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+html {
+  color: white;
+}
+
+.game-interface {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 380px;
+  height: 380px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  box-sizing: border-box;
+}
+.game-wrapper {
+  position: relative;
+}
+
+.svg-container {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.player-container {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 220px;
+}
+
+.p2.name,
+.p1.name {
+  font-size: 40px;
+}
+
+.player-container img {
+  width: 112px;
+  height: 112px;
+  border: 5px solid #120b3c;
+  border-radius: 50%;
+  background-color: #d0ebfa;
+}
+
+#pop-up-menu {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(255, 255, 255, 0.45) 100%
+    ),
+    #5c6de0;
+  background-blend-mode: soft-light, normal;
+  border: 6px solid #262067;
+  border-radius: 23.5402px;
+  display: grid;
+  grid-template-columns: 1fr 45px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: visible;
+  height: fit-content;
+  grid-template-rows: min-content min-content;
+}
+
+#pop-up-menu h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36.7815px;
+  line-height: 55px;
+
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #ffffff;
+
+  text-shadow: 0px 2.94252px 5.88504px rgba(91, 26, 26, 0.14),
+    0px 4.41378px 5.88504px rgba(123, 12, 12, 0.12),
+    0px 1.47126px 7.35631px rgba(136, 13, 13, 0.2);
+}
+
+#pop-up-menu h2 {
+  font-size: 13px;
+  line-height: 18px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  color: #ffffff;
+}
+
+#inner-menu {
+  max-width: 520px;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(255, 255, 255, 0.25) 100%
+    ),
+    #38469e;
+  background-blend-mode: soft-light, normal;
+  border-radius: 11.7701px;
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: start;
+  padding: 30px;
+  box-sizing: border-box;
+  gap: 30px;
+  position: relative;
+}
+
+button,
+input[type="text"],
+input::file-selector-button {
+  cursor: pointer;
+}
+
+input[type="text"] {
+  height: 30px;
+  padding-left: 10px;
+  border-radius: 20px;
+  width: 200px;
+}
+
+#closeModal {
+  height: fit-content;
+  width: fit-content;
+}
+
+.game-mode button,
+.game-symbol button,
+.game-buttons button,
+.start-button,
+#openModal {
+  background: linear-gradient(
+      360deg,
+      #0088ff -24.54%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #2d7dfe;
+  background-blend-mode: multiply, normal;
+  border-radius: 21.0277px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+
+  text-shadow: 1px 1px 1px #2e0051;
+  border: 2.6px solid #161d4c;
+}
+
+#pop-up-menu button:disabled {
+  background: linear-gradient(
+      4.91deg,
+      #1d4364 -37.77%,
+      rgba(255, 255, 255, 0) 96.04%
+    ),
+    #9daec9;
+  background-blend-mode: multiply, normal;
+}
+
+.game-mode button:hover,
+.game-symbol button:hover,
+.game-buttons button:hover,
+.start-button:hover,
+#openModal:hover,
+.bot-container:hover img {
+  border: 2.6px solid #ffae02;
+}
+
+.player-container img.highlight {
+  border-color: #ffae02;
+  background-color: #ffae02;
+}
+
+.game-mode button.selected,
+.game-symbol button.selected,
+.game-buttons button.selected,
+.start-button.selected {
+  background: #ffae02;
+  border: 2.6px solid #9e6b00;
+
+  font-weight: 700;
+  font-size: 13px;
+  color: #372500;
+  text-shadow: none;
+}
+
+.game-buttons button {
+  width: 140px;
+  height: 40px;
+}
+
+button.selected img {
+  background-color: #ffae02;
+  border-color: #ffae02;
+}
+
+button.selected .bot-details {
+  color: #ffcd54;
+}
+
+button {
+  color: white;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+.game-mode,
+.game-symbol {
+  width: 185px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 5px;
+}
+
+.game-symbol h2,
+.game-mode > * {
+  grid-column: 1/3;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-container {
+  display: flex;
+  width: 380px;
+  justify-content: space-between;
+  align-items: flex-end;
+  justify-items: center;
+  margin-bottom: -10px;
+  gap: 10px;
+  height: 50px;
+}
+
+.text-container.load {
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-announcement {
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffaa01;
+}
+
+.round-counter {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.symbol-X,
+.symbol-O {
+  width: 85px;
+  height: 85px;
+}
+
+.game-mode .pvp,
+.game-mode .pvc {
+  height: 38px;
+  width: 100%;
+}
+
+.player-details,
+.computer-difficulty {
+  grid-column: 1 /3;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.computer-difficulty button,
+#closeModal,
+button.grid-child {
+  /* Remove default button appearance */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit; /* Use the same font as the surrounding text */
+
+  /* Keep it functional */
+  cursor: pointer;
+  outline: none; /* Remove the outline (optional) */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button.grid-child:not(:disabled):hover {
+  background-color: #1d1358;
+}
+
+.computer-difficulty button,
+#closeModal {
+  gap: 5px;
+}
+
+.bot-container img,
+.avatar-container img {
+  height: 52px;
+  background-color: #120b3c;
+  border-radius: 50%;
+  border: 2.6px solid transparent;
+}
+
+.bot-diff {
+  font-weight: 400;
+  font-size: 9px;
+  text-align: center;
+}
+.bot-name {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.start-button {
+  height: 38px;
+  width: 100px;
+  position: absolute;
+  bottom: -30px;
+}
+
+button.grid-child.win {
+  /* background-color: #e9a93a; */
+
+  background-color: rgba(64, 142, 239, 0.67);
+}
+/* 
+.body-text {
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  text-shadow: 0px 1.75231px 1.52203px rgba(38, 12, 123, 0.45);
+} */
+
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.visible {
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flash {
+  animation: text-alert 0.2s ease-in-out infinite;
+  color: #ffffff;
+}
+
+/* Apply swap animation conditionally with the .swap class */
+.player-one.swap {
+  animation: swap-right 0.5s ease-in-out forwards;
+}
+
+.player-two.swap {
+  animation: swap-left 0.5s ease-in-out forwards;
+}
+
+.personal-logo {
+  position: absolute;
+  bottom: 5%;
+}
+
+.personal-logo a:hover {
+  transform: scale(1.1);
+}
+
+/* Define keyframes for player-one moving to the right */
+@keyframes swap-right {
+  0% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+
+  40% {
+    opacity: 0%;
+  }
+
+  50% {
+    transform: translateX(50px); /* Adjust based on layout */
+  }
+
+  60% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+/* Define keyframes for player-two moving to the left */
+@keyframes swap-left {
+  0% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+
+  40% {
+    opacity: 0%;
+  }
+
+  50% {
+    transform: translateX(-50px); /* Adjust based on layout */
+  }
+
+  60% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes text-alert {
+  0%,
+  100% {
+    color: #ff7629; /* original color */
+  }
+  25%,
+  75% {
+    color: #fff629; /* changed color */
+  }
+}
+
+/* .container > * {
+  border: 1px solid pink;
+  box-sizing: border-box;
+} */
