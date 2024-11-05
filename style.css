@@ -583,7 +583,7 @@ button.grid-child.win {
   bottom: 5%;
 }
 
-.personal-logo a:hover {
+.personal-logo:hover {
   transform: scale(1.1);
 }
 
